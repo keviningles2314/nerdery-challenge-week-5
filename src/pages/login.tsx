@@ -6,7 +6,7 @@ const Login = () => {
   const [textUserEmail, setTextUserEmail] = useState('');
 
   useEffect(() => {
-    if (/\S+@\S+\.\S+/.test(textUserEmail)) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(textUserEmail)) {
       setIsButtonDisabled(false);
     } else {
       setIsButtonDisabled(true);
@@ -15,6 +15,9 @@ const Login = () => {
 
   const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTextUserEmail(event.target.value);
+  };
+  const handleClick = () => {
+    console.log('click');
   };
 
   console.log(textUserEmail);
@@ -30,9 +33,14 @@ const Login = () => {
             type='text'
             placeholder='user@ravn.co'
           />
-          <button id='loginButton'>LOGIN</button>
-
-          <h3>{isbuttonDisabled ? 'disabled' : 'correct'}</h3>
+          <button
+            id='loginButton'
+            onClick={handleClick}
+            className={`button-${isbuttonDisabled ? 'disabled' : 'enabled'}`}
+            disabled={isbuttonDisabled}
+          >
+            LOGIN
+          </button>
         </div>
       </div>
     </div>
