@@ -1,2 +1,33 @@
 .Login {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 20px;
+}
+
+#textBoxEmail {
+  border: none;
+  padding: 5px 5px 5px 15px;
+  height: 50px;
+}
+#loginButton {
+  padding: 5px;
+  border: none;
+  background-color: #c69433;
+  color: #f2f2f2;
+  height: 60px;
+  font-size: 1em;
 }
