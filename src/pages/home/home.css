@@ -1,0 +1,15 @@
+.Home {
+  margin: 0;
+  height: 100%;
+  display: flex;
+}
+
+.navbar {
+  width: 25%;
+}
+
+.userposts {
+  width: 100%;
+  background-color: #ffffff;
+  color: #2d4440;
+}

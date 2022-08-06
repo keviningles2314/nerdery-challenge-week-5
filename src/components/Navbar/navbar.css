@@ -1,0 +1,33 @@
+.Navbar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.yellow-navbar-text {
+  color: #c1b59f;
+  font-size: 1.2em;
+}
+
+.logout {
+  color: #c69433;
+}
+
+.navbar-links {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selected {
+  text-decoration: underline #c1b59f;
+  text-decoration-thickness: 3px;
+}
+.navbar-bottom-items {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0px 0px 40px 0px;
+}
