@@ -1,9 +1,9 @@
 import './navbar.css';
 
-interface Iprops {
-  userId: number;
+export interface Iprops {
+  userInfo: { id: number; name: string };
 }
-const Navbar = ({ userId }: Iprops) => {
+const Navbar = ({ userInfo }: Iprops) => {
   return (
     <div className='Navbar'>
       <div className='navbar-links'>
@@ -11,8 +11,8 @@ const Navbar = ({ userId }: Iprops) => {
         <p className='yellow-navbar-text'>All posts</p>
       </div>
       <div className='navbar-bottom-items'>
-        <p> Logged in as: username</p>
-        <p className='logout'>LOGOUT </p>
+        <p> {`Logged in as: ${userInfo.name}`}</p>
+        <p className='logout'>LOGOUT</p>
       </div>
     </div>
   );

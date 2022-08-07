@@ -8,8 +8,11 @@
   width: 25%;
 }
 
-.userposts {
+.posts-content {
   width: 100%;
+  height: 100%;
   background-color: #ffffff;
-  color: #2d4440;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
 }

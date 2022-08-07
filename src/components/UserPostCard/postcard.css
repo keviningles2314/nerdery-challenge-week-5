@@ -1,0 +1,15 @@
+.userPostCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #83611d;
+  text-transform: capitalize;
+  text-align: left;
+  cursor: pointer;
+  gap: 10px;
+  border-radius: 20px;
+}
+.userPostCard:hover {
+  background-color: #e9e9e9;
+}
