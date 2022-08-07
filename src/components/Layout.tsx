@@ -25,7 +25,7 @@ const Layout = ({ children }: PropsWithChildren) => {
       <div className='navbar'>
         {!isLoading && <Navbar userInfo={userInformation[0]} />}
       </div>
-      <main>{children}</main>
+      <main className='main'>{children}</main>
     </div>
   );
 };
