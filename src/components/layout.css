@@ -1,0 +1,8 @@
+.layout {
+  height: 100%;
+  display: flex;
+}
+.navbar {
+  width: 20%;
+  height: 100%;
+}

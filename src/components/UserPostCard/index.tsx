@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './postcard.css';
 interface IPostProps {
   postInfo: {
@@ -11,10 +12,12 @@ interface IPostProps {
 const UserPostCard = ({ postInfo }: IPostProps) => {
   return (
     <div className='userPostCard'>
-      <p>
-        <b>{postInfo.title}</b>
-      </p>
-      <p>{postInfo.body}</p>
+      <Link to={`/posts/${postInfo.id}`} className='redirect-block'>
+        <p>
+          <b>{postInfo.title}</b>
+        </p>
+        <p>{postInfo.body}</p>
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import Layout from '../../components/Layout';
 import Navbar from '../../components/Navbar';
 import { getUserInfo } from '../../util/getUser';
 import { isUserLogged } from '../../util/loginUser';
@@ -11,23 +12,10 @@ interface ILogged {
 }
 
 const Home = () => {
-  const [userInformation, setUserInformation] = useState([]);
   const { isLogged, userID } = isUserLogged() as ILogged;
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    getUserInfo(userID).then((userData) => {
-      setUserInformation(userData);
-      setIsLoading(false);
-    });
-  }, [isLoading]);
-
   return (
     <div className='Home'>
       {!isLogged && <Navigate to='/login' replace={true} />}
-      <div className='navbar'>
-        {isLoading && <h1>LOADING...</h1>}
-        {!isLoading && <Navbar userInfo={userInformation[0]} />}
-      </div>
       <div className='posts-content'>
         <UserPosts userId={userID} />
       </div>
