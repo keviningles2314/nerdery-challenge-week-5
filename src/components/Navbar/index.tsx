@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './navbar.css';
 
 export interface Iprops {
@@ -7,7 +8,9 @@ const Navbar = ({ userInfo }: Iprops) => {
   return (
     <div className='Navbar'>
       <div className='navbar-links'>
-        <p className='yellow-navbar-text selected'>My posts</p>
+        <Link to={'/'} className='yellow-navbar-text selected'>
+          My posts
+        </Link>
         <p className='yellow-navbar-text'>All posts</p>
       </div>
       <div className='navbar-bottom-items'>
