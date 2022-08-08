@@ -6,3 +6,17 @@ export const getPostsByUserId = async (userId: number) => {
   const postsData = await postsResponse.json();
   return postsData;
 };
+
+export const getPostInfoById = async (postId: string | undefined) => {
+  const URL_POST_BY_ID = `${BASE_URL}/${postId}`;
+  const postInfoResponse = await fetch(URL_POST_BY_ID);
+  const postInfoData = await postInfoResponse.json();
+  return postInfoData;
+};
+
+export const getCommentsByPostId = async (postId: string | undefined) => {
+  const URL_COMMENTS_BY_POST = `${BASE_URL}/${postId}/comments`;
+  const commentsResponse = await fetch(URL_COMMENTS_BY_POST);
+  const commentsData = await commentsResponse.json();
+  return commentsData;
+};

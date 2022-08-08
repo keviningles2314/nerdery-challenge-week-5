@@ -1,8 +1,34 @@
 .PostDetail {
   width: 100%;
   height: 100%;
+  display: flex;
+  color: #9a7f47;
   background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+.postDetail-container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  color: #9a7f47;
+  padding: 50px 20px 0px 200px;
+}
+.detail-header {
+  width: 60%;
+}
+.top-content {
+  display: flex;
+}
+.detail-description {
+  width: 50%;
+}
+.comment-block {
+  display: flex;
+  flex-direction: column;
+}
+.Comments {
+  display: flex;
+  flex-direction: column;
 }
