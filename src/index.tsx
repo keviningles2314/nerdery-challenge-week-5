@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import PostDetail from './pages/postDetail';
 import Login from './pages/login';
+import AllPosts from './pages/allPosts';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ root.render(
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<App />} />
         <Route path='/posts/:postId' element={<PostDetail />} />
+        <Route path='/allposts' element={<AllPosts />} />
       </Routes>
     </Router>
   </React.StrictMode>
