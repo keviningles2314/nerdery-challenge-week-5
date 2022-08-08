@@ -21,3 +21,7 @@ export const isUserLogged = () => {
     return { user: null, isLogged: false };
   }
 };
+
+export const userLogOut = () => {
+  localStorage.clear();
+};

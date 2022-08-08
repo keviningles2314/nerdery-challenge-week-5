@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
+import { userLogOut } from '../../util/loginUser';
 import './navbar.css';
 
 export interface Iprops {
   userInfo: { id: number; name: string };
 }
 const Navbar = ({ userInfo }: Iprops) => {
+  const handleLogOut = () => {
+    userLogOut();
+  };
   return (
     <div className='Navbar'>
       <div className='navbar-links'>
@@ -15,7 +19,9 @@ const Navbar = ({ userInfo }: Iprops) => {
       </div>
       <div className='navbar-bottom-items'>
         <p> {`Logged in as: ${userInfo.name}`}</p>
-        <p className='logout'>LOGOUT</p>
+        <Link to={'/login'} onClick={handleLogOut} className='logout'>
+          LOGOUT
+        </Link>
       </div>
     </div>
   );
