@@ -20,3 +20,9 @@ export const getCommentsByPostId = async (postId: string | undefined) => {
   const commentsData = await commentsResponse.json();
   return commentsData;
 };
+
+export const getAllPosts = async () => {
+  const allPostsResponse = await fetch(BASE_URL);
+  const allPostsData = await allPostsResponse.json();
+  return allPostsData;
+};

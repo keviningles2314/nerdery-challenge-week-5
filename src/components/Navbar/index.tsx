@@ -15,7 +15,9 @@ const Navbar = ({ userInfo }: Iprops) => {
         <Link to={'/'} className='yellow-navbar-text selected'>
           My posts
         </Link>
-        <p className='yellow-navbar-text'>All posts</p>
+        <Link to={'/allposts'} className='yellow-navbar-text'>
+          All posts
+        </Link>
       </div>
       <div className='navbar-bottom-items'>
         <p> {`Logged in as: ${userInfo.name}`}</p>

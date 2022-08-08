@@ -9,6 +9,7 @@
 .yellow-navbar-text {
   color: #c1b59f;
   font-size: 1.2em;
+  text-decoration: none;
 }
 
 .logout {
