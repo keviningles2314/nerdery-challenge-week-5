@@ -23,7 +23,6 @@ const UserCardInfo = ({ userId }: IUserCardProps) => {
   useEffect(() => {
     getPostImage(userId).then((imageData) => {
       setImageInformation(imageData);
-      console.log(imageInformation);
     });
     getUserInfo(userId).then((userData) => {
       setUserInformation(userData[0]);

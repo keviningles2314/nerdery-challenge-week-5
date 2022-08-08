@@ -27,7 +27,6 @@ const PostDetail = () => {
   useEffect(() => {
     getPostImage(postId).then((imageData) => {
       setImageInformation(imageData);
-      console.log(imageInformation);
     });
     getPostInfo(postId).then((postData) => {
       setPostInformationData(postData.postInformation);
