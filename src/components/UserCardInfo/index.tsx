@@ -22,7 +22,6 @@ const UserCardInfo = ({ userId }: IUserCardProps) => {
       setIsLoading(false);
     });
   }, []);
-  console.log(userInformation);
   return (
     <div className='user-content'>
       {!isLoading && (

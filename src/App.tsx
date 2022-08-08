@@ -4,7 +4,6 @@ import './App.css';
 import Login from './pages/login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
-import PostDetail from './pages/postDetail';
 import Layout from './components/Layout';
 
 function App() {
