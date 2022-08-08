@@ -4,9 +4,11 @@ import './postdetail.css';
 import { getPostInfo } from '../../util/getPosts';
 import { useEffect, useState } from 'react';
 import CommentsCard from '../../components/CommentsCard';
+import UserCardInfo from '../../components/UserCardInfo';
 interface IPostData {
   title: string;
   body: string;
+  userId: number;
 }
 
 const PostDetail = () => {
@@ -14,6 +16,7 @@ const PostDetail = () => {
   const [postInformationData, setPostInformationData] = useState<IPostData>({
     title: '',
     body: '',
+    userId: 0,
   });
   const [postCommentsInformation, setPostCommentsInformation] = useState([]);
   const { postId } = useParams<{ postId?: string }>();
@@ -24,6 +27,7 @@ const PostDetail = () => {
       setIsLoadingData(false);
     });
   }, []);
+
   return (
     <Layout>
       <div className='PostDetail'>
@@ -33,12 +37,9 @@ const PostDetail = () => {
               {!isLoadingData && <h2>{postInformationData.title}</h2>}
             </div>
             <div className='user-information-block'>
-              <h1>name</h1>
-              <p>userName</p>
-              <p>email</p>
-              <p>phone</p>
-              <p>email</p>
-              <p>address</p>
+              {!isLoadingData && (
+                <UserCardInfo userId={postInformationData.userId} />
+              )}
             </div>
           </div>
           <div className='detail-description'>
