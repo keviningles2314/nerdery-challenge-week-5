@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
+import { getPostImage } from '../../util/getImages';
 import { getUserInfo } from '../../util/getUser';
-
+import './usercard.css';
 interface IUserCardProps {
   userId: number;
 }
 const UserCardInfo = ({ userId }: IUserCardProps) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [imageInformation, setImageInformation] = useState({
+    download_url: '',
+  });
   const [userInformation, setUserInformation] = useState({
     name: '',
     username: '',
@@ -17,6 +21,10 @@ const UserCardInfo = ({ userId }: IUserCardProps) => {
     },
   });
   useEffect(() => {
+    getPostImage(userId).then((imageData) => {
+      setImageInformation(imageData);
+      console.log(imageInformation);
+    });
     getUserInfo(userId).then((userData) => {
       setUserInformation(userData[0]);
       setIsLoading(false);
@@ -24,12 +32,24 @@ const UserCardInfo = ({ userId }: IUserCardProps) => {
   }, []);
   return (
     <div className='user-content'>
+      <div className='user-image-content'>
+        <img
+          src={imageInformation.download_url}
+          className='image-user'
+          alt='user_image'
+        />
+        {!isLoading && (
+          <>
+            <h3>{userInformation.name}</h3>
+            <p>{userInformation.username}</p>
+            <p>{userInformation.email}</p>
+          </>
+        )}
+      </div>
       {!isLoading && (
         <>
-          <h1>{userInformation.name}</h1>
-          <p>{userInformation.username}</p>
-          <p>{userInformation.email}</p>
           <p>{userInformation.phone}</p>
+          <p>{userInformation.email}</p>
           <p>{`${userInformation.address.street}, ${userInformation.address.city}`}</p>
         </>
       )}

@@ -5,6 +5,7 @@ import { getPostInfo } from '../../util/getPosts';
 import { useEffect, useState } from 'react';
 import CommentsCard from '../../components/CommentsCard';
 import UserCardInfo from '../../components/UserCardInfo';
+import { getPostImage } from '../../util/getImages';
 interface IPostData {
   title: string;
   body: string;
@@ -18,9 +19,16 @@ const PostDetail = () => {
     body: '',
     userId: 0,
   });
+  const [imageInformation, setImageInformation] = useState({
+    download_url: '',
+  });
   const [postCommentsInformation, setPostCommentsInformation] = useState([]);
   const { postId } = useParams<{ postId?: string }>();
   useEffect(() => {
+    getPostImage(postId).then((imageData) => {
+      setImageInformation(imageData);
+      console.log(imageInformation);
+    });
     getPostInfo(postId).then((postData) => {
       setPostInformationData(postData.postInformation);
       setPostCommentsInformation(postData.postComments);
@@ -35,6 +43,11 @@ const PostDetail = () => {
           <div className='top-content'>
             <div className='detail-header'>
               {!isLoadingData && <h2>{postInformationData.title}</h2>}
+              <img
+                src={imageInformation.download_url}
+                className='header-img'
+                alt='post_image'
+              />
             </div>
             <div className='user-information-block'>
               {!isLoadingData && (
