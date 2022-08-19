@@ -1,0 +1,14 @@
+.CommentsCard {
+  padding: 20px 60px 0px 80px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  /*  */
+}
+.comment-content {
+  width: 60%;
+}
+.email {
+  display: flex;
+  align-items: center;
+}
