@@ -4,3 +4,4 @@ export const getUserInfo = async (userId: number) => {
   const userInfo = await getUserById(userId);
   return userInfo;
 };
+//

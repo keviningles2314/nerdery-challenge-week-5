@@ -26,3 +26,4 @@ export const getAllPosts = async () => {
   const allPostsData = await allPostsResponse.json();
   return allPostsData;
 };
+//

@@ -7,7 +7,7 @@ interface ICommentsProps {
     email: string;
   };
 }
-
+//
 const CommentsCard = ({ commentInfo }: ICommentsProps) => {
   return (
     <div className='CommentsCard'>

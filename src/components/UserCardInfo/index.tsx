@@ -56,3 +56,4 @@ const UserCardInfo = ({ userId }: IUserCardProps) => {
   );
 };
 export default UserCardInfo;
+//

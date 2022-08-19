@@ -18,3 +18,4 @@ export const getPostInfo = async (postId: string | undefined) => {
     postComments,
   };
 };
+//
