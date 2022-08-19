@@ -23,7 +23,7 @@
   flex-direction: column;
   gap: 20px;
 }
-
+/*  */
 .selected {
   text-decoration: underline #c1b59f;
   text-decoration-thickness: 3px;

@@ -7,3 +7,4 @@ export const getImageById = async (imageId: number | string | undefined) => {
   const imageInfoData = await imageInfoResponse.json();
   return imageInfoData;
 };
+//

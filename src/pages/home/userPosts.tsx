@@ -41,3 +41,4 @@ const UserPosts = ({ userId }: IProps) => {
   );
 };
 export default UserPosts;
+//

@@ -34,3 +34,4 @@ const UserPostCard = ({ postInfo, imageInfo }: IPostProps) => {
   );
 };
 export default UserPostCard;
+//

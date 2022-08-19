@@ -12,3 +12,4 @@ export const getUserById = async (userId: number) => {
   const userInfo = await userInfoResponse.json();
   return userInfo;
 };
+//
