@@ -1,0 +1,11 @@
+.UserPosts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 100px 0px 0px 300px;
+  width: 40%;
+  height: 100%;
+}
+.loading {
+  color: #2d4440;
+}

@@ -1,0 +1,14 @@
+.Home {
+  margin: 0;
+  height: 100%;
+  display: flex;
+}
+
+.posts-content {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
